@@ -8,10 +8,11 @@ public class Main {
 
     public static void main(String[] args)
     {
-        Lesson1();
-        Lesson2();
-        Lesson3();
-        Lesson4();
+        //Lesson1();
+        //Lesson2();
+        //Lesson3();
+        //Lesson4();
+        Lesson5();
     }
 
     public static void Lesson1()
@@ -162,30 +163,39 @@ public class Main {
 
         System.out.println("The number without last digit: " + number);
 
+        ////////// Directions
+//        final short north = 1;
+//        final short south = 2;
+//        final short west = 3;
+//        final short east = 4;
 
-        int dir = 0;
-        System.out.print("1 - north\n2 - south\n3 - west\n4 - east\n" +
+        enum Directions {
+            north, south, west, east
+        }
+
+        Directions dir = Directions.north; // direction of the ship
+        System.out.printf("1 - north\n2 - south\n3 - west\n4 - east\n" +
                 "Enter the direction of a ship: ");
-        dir = scanner.nextInt();
+        // dir = Directions.;n TODO
 
         // if else if ...
 
-        if (dir == 1) System.out.println("After command 'back': south");
-        else if (dir == 2) System.out.println("After command 'back': north");
-        else if (dir == 3) System.out.println("After command 'back': east");
-        else if (dir == 4) System.out.println("After command 'back': west");
+        if (dir == Directions.north) System.out.println("After command 'back': south");
+        else if (dir == Directions.south) System.out.println("After command 'back': north");
+        else if (dir == Directions.west) System.out.println("After command 'back': east");
+        else if (dir == Directions.east) System.out.println("After command 'back': west");
         else System.out.println("Invalid direction!");
 
         // switch
         switch (dir)
         {
-            case 1: System.out.println("After command 'back': south");
+            case north: System.out.println("After command 'back': south");
                 break;
-            case 2: System.out.println("After command 'back': north");
+            case south: System.out.println("After command 'back': north");
                 break;
-            case 3: System.out.println("After command 'back': east");
+            case west: System.out.println("After command 'back': east");
                 break;
-            case 4: System.out.println("After command 'back': west");
+            case east: System.out.println("After command 'back': west");
                 break;
 
             default: System.out.println("Invalid direction!"); break;
@@ -204,5 +214,36 @@ public class Main {
             break;
             // ...
         }
+    }
+    public static void Lesson5()
+    {
+        int count = scanner.nextInt(); // 5
+
+//        int i = 0;
+//        while (i < count) // condition = true
+//        {
+//            // code
+//            System.out.println("Hello");
+//
+//            ++i;
+//        }
+
+        // for (variables; condition; expression) { code... }
+        // 1 - create variables
+        // 2 - check condition
+        // 3 - do code
+        // 4 - do expression
+        for (int i = 0; i < count; ++i)
+        {
+            System.out.println(i+1 + " - Hello");
+        }
+
+        System.out.print("Continue... Press [0] to exit: ");
+
+        while(scanner.nextInt() != 0)
+        {
+            System.out.print("Try again: ");
+        }
+        System.out.println("Bye!");
     }
 }
