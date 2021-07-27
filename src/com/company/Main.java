@@ -12,7 +12,8 @@ public class Main {
         //Lesson2();
         //Lesson3();
         //Lesson4();
-        Lesson5();
+        //Lesson5();
+        Lesson6();
     }
 
     public static void Lesson1()
@@ -245,5 +246,63 @@ public class Main {
             System.out.print("Try again: ");
         }
         System.out.println("Bye!");
+    }
+    public static void Lesson6()
+    {
+//        float speed;
+//        System.out.print("Enter speed: ");
+
+        // 0...220
+        //speed = scanner.nextFloat();
+
+//        while (speed > 220 || speed < 0)
+//        {
+//            speed = scanner.nextFloat();
+//        }
+
+//        do
+//        {
+//            speed = scanner.nextFloat();
+//        } while (speed > 220 || speed < 0);
+
+//        for (int i = 1, k = 10; i <= 10; i++, --k) {
+//            System.out.print(i + "/" + k + " - ");
+//        }
+
+//        System.out.println("The end!");
+
+
+//        int w = 9, h = 6;
+//        char filler = '#';
+//        filler = scanner.next().charAt(0);
+//
+//        // **********
+//        for (int k = 0; k < h; k++)
+//        {
+//            for (int i = 0; i < w; i++)
+//            {
+//                if (i == w / 2)
+//                {
+//                    System.out.print('-');
+//                    continue;
+//                }
+//                System.out.print(filler);
+//            }
+//            System.out.println();
+//        }
+
+        final int maxCount = 5;
+        int counter = 0;
+
+        for (int i = 0; i < 100; i++)
+        {
+            if (i >= 20 && i <= 50) continue; // skip current iteration
+            if (i % 7 == 0)
+            {
+                System.out.print(i + ", ");
+                ++counter;
+                if (counter == maxCount) break; // close cycle
+            }
+        }
     }
 }
