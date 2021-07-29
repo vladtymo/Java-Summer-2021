@@ -13,7 +13,8 @@ public class Main {
         //Lesson3();
         //Lesson4();
         //Lesson5();
-        Lesson6();
+        //Lesson6();
+        Lesson7();
     }
 
     public static void Lesson1()
@@ -303,6 +304,62 @@ public class Main {
                 ++counter;
                 if (counter == maxCount) break; // close cycle
             }
+        }
+    }
+    public static void Lesson7()
+    {
+        //Array - collection of elements
+        //int[] arr = new int[] { 7, 9, 3, 5, 6, 1 }; // 0 0 0 0 0
+
+//        for (int i = 0; i < arr.length; ++i)
+//        {
+//            arr[i] = i+1;
+//        }
+
+//        System.out.println("Array Length: " + arr.length);
+//        for (int i = 0; i < arr.length; i++)
+//        {
+//            System.out.print(arr[i] + ", ");
+//        }
+
+        int count = 0;
+        System.out.print("Enter marks count: ");
+        count = scanner.nextInt();
+
+        float[] marks = new float[count]; // 0 0 0 0
+
+        double markSumma = 0;
+        for (int i = 0; i < marks.length; i++)
+        {
+            System.out.print("Enter mark: ");
+            marks[i] = scanner.nextFloat();
+            markSumma += marks[i];
+        }
+
+        System.out.println("Summa of mark: " + markSumma);
+        System.out.printf("Average mark: %.2f\n", markSumma / marks.length);
+        for (int i = 0; i < marks.length; i++)
+        {
+            System.out.print(marks[i] + " - ");
+        }
+
+        // Bubble Sort
+        for (int k = 0; k < marks.length - 1; ++k)
+        {
+            for (int i = 0; i < marks.length - 1 - k; i++)
+            {
+                if (marks[i] > marks[i + 1])
+                {
+                    float temp = marks[i];
+                    marks[i] = marks[i + 1];
+                    marks[i + 1] = temp;
+                }
+            }
+        }
+
+        for (int i = 0; i < marks.length; i++)
+        {
+            System.out.print(marks[i] + " - ");
         }
     }
 }
