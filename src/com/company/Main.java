@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -14,7 +15,8 @@ public class Main {
         //Lesson4();
         //Lesson5();
         //Lesson6();
-        Lesson7();
+        //Lesson7();
+        Lesson8();
     }
 
     public static void Lesson1()
@@ -360,6 +362,61 @@ public class Main {
         for (int i = 0; i < marks.length; i++)
         {
             System.out.print(marks[i] + " - ");
+        }
+    }
+    public static void Lesson8()
+    {
+        int[] ratings = new int[20];
+
+        Random rnd = new Random();
+
+        for (int i = 0; i < ratings.length; i++)
+        {
+            // Math.random() - 0...<1
+            ratings[i] = (int)(Math.random() * 11);
+
+            // Random().nextInt(10) - 0...<10;
+            ratings[i] = rnd.nextInt(10 + 1);
+
+            System.out.print(ratings[i] + ", ");
+        }
+        System.out.println();
+        PrintLine('#', 50);
+
+        SortArray(ratings, false);
+
+        for (int i = 0; i < ratings.length; i++) {
+            System.out.print(ratings[i] + ", ");
+        }
+
+        System.out.println();
+        PrintLine('@', 50);
+    }
+    public static void PrintLine(char symbol, int length) // '#', 5 - #####
+    {
+        for (int i = 0; i < length; i++) {
+            System.out.print(symbol);
+        }
+        System.out.println();
+    }
+    public static void SortArray(int[] arr, boolean isAcs)
+    {
+        // condition ? expression_if_true : expression_if_false
+        //System.out.println(10 > 5 ? "Bigger" : "Less");
+
+        int n = arr.length;
+        for (int i = 1; i < n; ++i) {
+            int key = arr[i];
+            int j = i - 1;
+
+            /* Move elements of arr[0..i-1], that are
+               greater than key, to one position ahead
+               of their current position */
+            while (j >= 0 && (isAcs ? arr[j] > key : arr[j] < key)) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = key;
         }
     }
 }
