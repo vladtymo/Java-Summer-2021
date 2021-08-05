@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Main {
 
     static Scanner scanner = new Scanner(System.in);
+    static Random random = new Random();
 
     public static void main(String[] args)
     {
@@ -16,7 +17,8 @@ public class Main {
         //Lesson5();
         //Lesson6();
         //Lesson7();
-        Lesson8();
+        //Lesson8();
+        Lesson9();
     }
 
     public static void Lesson1()
@@ -383,7 +385,7 @@ public class Main {
         System.out.println();
         PrintLine('#', 50);
 
-        SortArray(ratings, false);
+        SortArray(ratings, true);
 
         for (int i = 0; i < ratings.length; i++) {
             System.out.print(ratings[i] + ", ");
@@ -394,10 +396,12 @@ public class Main {
     }
     public static void PrintLine(char symbol, int length) // '#', 5 - #####
     {
+        if (length <= 0) return;
+
         for (int i = 0; i < length; i++) {
             System.out.print(symbol);
         }
-        System.out.println();
+        System.out.println("...end!");
     }
     public static void SortArray(int[] arr, boolean isAcs)
     {
@@ -417,6 +421,86 @@ public class Main {
                 j = j - 1;
             }
             arr[j + 1] = key;
+        }
+    }
+
+    public static void Lesson9()
+    {
+        int a = GetStepin(3, 3);
+
+        System.out.println("Stepin = " + a);
+        if (a % 2 == 0) System.out.println("Result is even number!");
+
+        PrintLine('%', 20);
+
+        int[] intArr = new int[8];
+        InitializeArray(intArr);
+        PrintArray(intArr);
+
+        double[] doubleArr = new double[8];
+        InitializeArray(doubleArr);
+        PrintArray(doubleArr);
+
+        char[] charArr = new char[50];
+        InitializeArray(charArr);
+        PrintArray(charArr);
+    }
+    public static int Login(int code)
+    {
+       if (code == 123) return 200;
+       else if (code == 0) return 500;
+       else if (code == -1) return 404;
+       else return 0;
+    }
+    public static int GetStepin(int number, int step)
+    {
+        int result = number;
+        for (int i = 0; i < step - 1; ++i)
+        {
+            result *= number;
+        }
+
+        // System.out.println("Result: " + result);
+        return result; // close method
+    }
+
+    public static void PrintArray(int[] arr)
+    {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + ", ");
+        }
+        System.out.println();
+    }
+    public static void PrintArray(double[] arr)
+    {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + ", ");
+        }
+        System.out.println();
+    }
+    public static void PrintArray(char[] arr)
+    {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + ", ");
+        }
+        System.out.println();
+    }
+    public static void InitializeArray(int[] arr)
+    {
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100);
+        }
+    }
+    public static void InitializeArray(double[] arr)
+    {
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100) + random.nextDouble();
+        }
+    }
+    public static void InitializeArray(char[] arr)
+    {
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (char)(random.nextInt(90 - 65 + 1) + 65);
         }
     }
 }
