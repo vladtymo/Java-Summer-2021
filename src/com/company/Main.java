@@ -20,15 +20,8 @@ public class Main {
         //Lesson8();
         //Lesson9();
         //Lesson10();
+        Lesson11();
 
-        Car myCar = new Car();
-
-        //myCar.currentSpeed = -10; // has no access
-        myCar.Stop();
-        myCar.ShowStatus();
-        myCar.Gas();
-        myCar.ShowStatus();
-        myCar.ShowCurrentSpeed();
     }
 
     public static void Lesson1()
@@ -610,33 +603,21 @@ public class Main {
 
         return false;
     }
+
+    public static void Lesson11() {
+        Refrigerator ref1 = new Refrigerator("Samsung", 100, 100, 210, 1);
+        //ref1.Initializer("Samsung", 100, 100, 210, 1);
+
+        ref1.SwitchPower();
+        ref1.SetMinMaxT(-6, 2);
+
+        //ref1.currentT = -20; // error (private access)
+        ref1.SetUpT();
+        ref1.SetUpT();
+        ref1.SetUpT();
+        ref1.SetUpT();
+
+        ref1.PrintInfo();
+    }
 }
 
-class Car
-{
-    // properties
-    private float currentSpeed;
-
-    // methods
-    private void Stop()
-    {
-        System.out.println("Press break pedal!");
-        currentSpeed = 0;
-    }
-    void Gas()
-    {
-        System.out.println("Press gas pedal!");
-        currentSpeed += 25;
-    }
-    void ShowCurrentSpeed()
-    {
-        System.out.println("Speed: " + currentSpeed + " km/h");
-    }
-    void ShowStatus()
-    {
-        if (currentSpeed <= 0)
-            System.out.println("Car was stopped!");
-        else
-            System.out.println("Car is driving!");
-    }
-}
