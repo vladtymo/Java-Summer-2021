@@ -14,6 +14,15 @@ public class Refrigerator {
     private float powerUsage;
     private boolean isON; // ON - true, OFF - false
 
+    // static field - create single instance
+    private static String type = "Household appliance";
+    private static int count = 0;
+
+    // initializer scope
+    {
+        height = width = length = 1;
+        ++count;
+    }
     // methods (functions)
     // constructors
     // default constructor - without parameters
@@ -30,9 +39,19 @@ public class Refrigerator {
         powerUsage = pu;
     }
 
-    public void SwitchPower() {
-        isON = !isON;
+    // getters
+    public float GetCurrentT() {
+        return currentT;
     }
+    // static method - can access only static fields
+    public static String GetType() {
+        return type;
+    }
+    public static int GetCount() {
+        return count;
+    }
+
+    // setters
     public void SetMinMaxT(int min, int max) {
         if (min > max) {
             int temp = min;
@@ -49,6 +68,10 @@ public class Refrigerator {
     public void SetDownT() {
         if (currentT > minT)
             --currentT;
+    }
+
+    public void SwitchPower() {
+        isON = !isON;
     }
     public void PrintInfo() {
         System.out.println("----- " + model + " -----");

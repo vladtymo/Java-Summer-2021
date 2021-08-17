@@ -605,7 +605,10 @@ public class Main {
     }
 
     public static void Lesson11() {
+        System.out.println("Product Type: " + Refrigerator.GetType());
+
         Refrigerator ref1 = new Refrigerator("Samsung", 100, 100, 210, 1);
+        Refrigerator ref2 = new Refrigerator("LG", 120, 90, 210, 1.5F);
         //ref1.Initializer("Samsung", 100, 100, 210, 1);
 
         ref1.SwitchPower();
@@ -617,7 +620,11 @@ public class Main {
         ref1.SetUpT();
         ref1.SetUpT();
 
+        System.out.println("Product Count: " + Refrigerator.GetCount());
+
         ref1.PrintInfo();
+        ref2.PrintInfo();
     }
+
 }
 
