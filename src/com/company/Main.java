@@ -20,8 +20,8 @@ public class Main {
         //Lesson8();
         //Lesson9();
         //Lesson10();
-        Lesson11();
-
+        //Lesson11();
+        Lesson12();
     }
 
     public static void Lesson1()
@@ -626,5 +626,36 @@ public class Main {
         ref2.PrintInfo();
     }
 
+    public static void Lesson12() {
+        Car car1 = new Car("Tesla Roadster", "Metallica", 0, 280);
+//        car1.ShowInfo();
+//        car1.Boost(10);
+//        car1.Boost(10);
+//        car1.Drive();
+
+        PoliceCar policeCar1 = new PoliceCar("Toyota Prius", "White", 30, 160, 8);
+//        policeCar1.Chase();
+//        policeCar1.ShowInfo();
+
+        SportCar sportCar = new SportCar("Ferrari F12", "Red", 120, 290, (short)2);
+//        sportCar.SuperBoost(20);
+//        sportCar.ShowInfo();
+
+//        TestDrive(car1);
+//        TestDrive(policeCar1);
+//        TestDrive(sportCar);
+
+        Car[] carSalon = new Car[] { car1, policeCar1, sportCar };
+
+        for (Car car: carSalon) {
+            car.ShowInfo();
+        }
+    }
+
+    public static void TestDrive(Car car) {
+        car.ShowInfo();
+        car.Boost(10);
+        car.Drive();
+    }
 }
 
