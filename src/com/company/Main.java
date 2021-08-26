@@ -21,7 +21,8 @@ public class Main {
         //Lesson9();
         //Lesson10();
         //Lesson11();
-        Lesson12();
+        //Lesson12();
+        Lesson13();
     }
 
     public static void Lesson1()
@@ -657,5 +658,26 @@ public class Main {
         car.Boost(10);
         car.Drive();
     }
-}
 
+    public static void Lesson13() {
+
+        //Animal a = new Animal(""); // con not create an abstract class
+        Frog f = new Frog("Crazy frog", 120);
+        Duck d = new Duck("Kryak Macdak", 20000);
+        Parrot p = new Parrot("Gosha", 20000);
+
+
+        Rollcall(f);
+        Rollcall(d);
+
+        TestFlyingPosibility(d);
+
+    }
+    public static void Rollcall(Animal animal) {
+        animal.Say();
+    }
+    public static void TestFlyingPosibility(IFlyable a) {
+        a.Fly();
+        a.Lend();
+    }
+}
