@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -22,7 +25,8 @@ public class Main {
         //Lesson10();
         //Lesson11();
         //Lesson12();
-        Lesson13();
+        //Lesson13();
+        Lesson14();
     }
 
     public static void Lesson1()
@@ -679,5 +683,37 @@ public class Main {
     public static void TestFlyingPosibility(IFlyable a) {
         a.Fly();
         a.Lend();
+    }
+
+    public static void Lesson14()
+    {
+        ArrayList<String> words = new ArrayList<String>();
+
+        // add
+        words.add("One");
+        words.add("Hello");
+        words.add("Red");
+        words.add("Brown");
+        words.add(1, "Two");
+
+        for (String w : words)
+        {
+            System.out.print(w + ", ");
+        }
+        System.out.println();
+
+        if (words.contains("Hello"))
+            System.out.println("The word 'Hello' is exists!");
+
+        words.set(0, "First");
+        //words.remove("Red");
+        //words.remove(1);
+
+        Collections.sort(words);
+
+        String[] arr = words.toArray(new String[0]);
+
+        for (String w : arr) System.out.print(w + ", "); System.out.println();
+
     }
 }
