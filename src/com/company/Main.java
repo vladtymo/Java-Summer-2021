@@ -1,10 +1,6 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -26,7 +22,8 @@ public class Main {
         //Lesson11();
         //Lesson12();
         //Lesson13();
-        Lesson14();
+        //Lesson14();
+        Lesson15();
     }
 
     public static void Lesson1()
@@ -715,5 +712,78 @@ public class Main {
 
         for (String w : arr) System.out.print(w + ", "); System.out.println();
 
+    }
+
+    public static void Lesson15()
+    {
+        ////////////// ArrayList
+//        ArrayList<String> arrayList = new ArrayList<String>();
+//        arrayList.add("Red");
+//        arrayList.add("Green");
+//        arrayList.add("Blue");
+//        arrayList.add(2,"White");
+
+        //////////////// LinkedList
+//        LinkedList<String> linkedList = new LinkedList<String>();
+//        linkedList.addFirst("Red");
+//        linkedList.addLast("Black");
+//
+//        System.out.println("First: " + linkedList.peekFirst());
+//        System.out.println("Last: " + linkedList.peekLast());
+//        System.out.println("Linked List size: " + linkedList.size());
+//
+//        System.out.println("First: " + linkedList.pollFirst());
+//        System.out.println("Last: " + linkedList.pollLast());
+//        System.out.println("Linked List size: " + linkedList.size());
+//
+//        try {
+//            String str = linkedList.removeLast();
+//        }
+//        catch (Exception ex) {
+//            System.out.println(ex.toString());
+//        }
+//
+//        String str = linkedList.pollLast();
+//
+//        if (str == null) System.out.println("No element!");
+//        else System.out.println("Good!");
+//
+//        System.out.println("Continue!");
+
+        //////////////////// Stack - LIFO - Last In First Out
+//        Stack<String> stack = new Stack<String>();
+//
+//        stack.push("Red");
+//        stack.push("Green");
+//        stack.push("Blue");
+//
+//        System.out.println("Top: " + stack.peek());
+//
+//        while (!stack.isEmpty()) {
+//            System.out.println("Element: " + stack.pop());
+//        }
+
+        ////////////////// ArrayDeque
+//        ArrayDeque<String> deque = new ArrayDeque<String>();
+//        deque.addFirst("Red");
+//        deque.pollLast();
+
+        /////////////////// HashSet
+        HashSet<String> hashSet = new HashSet<String>();
+
+        hashSet.add("Green");
+        hashSet.add("Brown");
+        hashSet.add("Yellow");
+
+        hashSet.add("Greenn");
+        hashSet.add("Green2");
+        hashSet.add("Gjgergare");
+        hashSet.add("Gggggggg");
+        //hashSet.remove("Green");
+
+        for (String s : hashSet) {
+            System.out.println("Hash: " + s.hashCode());
+            System.out.println("Element: " + s);
+        }
     }
 }
